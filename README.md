@@ -1,3 +1,3 @@
-#Expense Account 
+# Expense Account 
 
-A app for tracking Expenses
+An app for tracking Expenses
