@@ -12,7 +12,7 @@
    <children>
       <AnchorPane fx:id="mainForm" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <AnchorPane prefHeight="400.0" prefWidth="331.0" styleClass="left-form" stylesheets="@css/login.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane prefHeight="400.0" prefWidth="331.0" styleClass="left-form" stylesheets="@../../../../css/login.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <FontAwesomeIconView caretBias="false" fill="WHITE" glyphName="CREDIT_CARD" layoutX="96.0" layoutY="164.0" size="10em" />
                   <Text fill="WHITE" layoutX="46.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EXPENSE ACCOUNT" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="45.0">
@@ -21,7 +21,7 @@
                      </font>
                   </Text>
                </children></AnchorPane>
-            <AnchorPane layoutX="331.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="271.0" styleClass="right-form" stylesheets="@css/login.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane layoutX="331.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="271.0" styleClass="right-form" stylesheets="@../../../../css/login.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
                <children>
                   <FontAwesomeIconView glyphName="USER" layoutX="123.0" layoutY="101.0" size="5em" wrappingWidth="48.0" AnchorPane.rightAnchor="100.0" />
                   <Text fill="#0f6272" layoutX="92.0" layoutY="139.0" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back!" textAlignment="JUSTIFY" AnchorPane.leftAnchor="92.0" AnchorPane.rightAnchor="93.3671875">
@@ -29,10 +29,10 @@
                         <Font name="Avenir Next Condensed Bold" size="18.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="username" layoutX="47.0" layoutY="174.0" prefHeight="26.0" prefWidth="181.0" promptText="Username" styleClass="textfield" stylesheets="@css/login.css" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="49.0" />
-                  <TextField fx:id="password" layoutX="47.0" layoutY="218.0" prefHeight="26.0" prefWidth="181.0" promptText="Password" styleClass="textfield" stylesheets="@css/login.css" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="49.0" />
-                  <Button fx:id="loginBtn" layoutX="47.0" layoutY="275.0" mnemonicParsing="false" onAction="#onLogin" prefHeight="40.0" styleClass="login-btn" stylesheets="@css/login.css" text="Login" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="49.0" />
-                  <Button fx:id="close" alignment="CENTER" cancelButton="true" layoutX="217.0" layoutY="14.0" mnemonicParsing="false" onAction="#close" prefHeight="10.0" prefWidth="30.0" styleClass="close" stylesheets="@css/login.css" textAlignment="CENTER" textFill="TRANSPARENT" wrapText="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                  <TextField fx:id="username" layoutX="47.0" layoutY="174.0" prefHeight="26.0" prefWidth="181.0" promptText="Username" styleClass="textfield" stylesheets="@../../../../css/login.css" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="49.0" />
+                  <TextField fx:id="password" layoutX="47.0" layoutY="218.0" prefHeight="26.0" prefWidth="181.0" promptText="Password" styleClass="textfield" stylesheets="@../../../../css/login.css" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="49.0" />
+                  <Button fx:id="loginBtn" layoutX="47.0" layoutY="275.0" mnemonicParsing="false" onAction="#onLogin" prefHeight="40.0" styleClass="login-btn" stylesheets="@../../../../css/login.css" text="Login" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="49.0" />
+                  <Button fx:id="close" alignment="CENTER" cancelButton="true" layoutX="217.0" layoutY="14.0" mnemonicParsing="false" onAction="#close" prefHeight="10.0" prefWidth="30.0" styleClass="close" stylesheets="@../../../../css/login.css" textAlignment="CENTER" textFill="TRANSPARENT" wrapText="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                      <graphic>
                         <FontAwesomeIconView glyphName="CLOSE" text="" />
                      </graphic>

@@ -1,12 +1,13 @@
 package com.sage.exp.expenseaccount.services;
 
 import com.google.inject.Inject;
+import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.dao.DaoManager;
 import com.sage.exp.expenseaccount.managers.DatabaseManager;
+import com.sage.exp.expenseaccount.models.Admin;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class AuthService {
     DatabaseManager manager;
@@ -17,16 +18,11 @@ public class AuthService {
     }
 
     public boolean authenticate(String username, String password) {
-        Connection conn;
         try {
-            conn = manager.getConnection();
-            String query = "SELECT * FROM admin WHERE name = ? and password = ?";
-            PreparedStatement statement = conn.prepareStatement(query);
-            statement.setString(1, username);
-            statement.setString(2, password);
-            ResultSet result = statement.executeQuery();
-
-            return result.next();
+            Dao<Admin, Long> dao = DaoManager.createDao(manager.getConnection(), Admin.class);
+            List<Admin> admin = dao.queryBuilder().where().eq("USERNAME", username)
+                    .and().eq("PASSWORD", password).query();
+            return admin.size() == 1;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
