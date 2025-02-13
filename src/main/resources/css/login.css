@@ -43,3 +43,7 @@
 .login-btn:focused {
     -fx-background-color: #43ab95;
 }
+
+.background-radius-10 {
+    -fx-background-radius: 10px;
+}

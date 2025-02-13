@@ -16,7 +16,7 @@ public class ApplicationUtil {
     private void loadProperties() {
         Properties properties = new Properties();
         try {
-            properties.load(DatabaseUtil.class.getClassLoader().getResourceAsStream("application.properties"));
+            properties.load(ApplicationUtil.class.getClassLoader().getResourceAsStream("application.properties"));
 
             // set properties
             dbUrl = properties.getProperty("datasource.url");
