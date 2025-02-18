@@ -1,20 +1,22 @@
 package com.sage.exp.expenseaccount.services;
 
-import com.google.inject.Inject;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 import com.sage.exp.expenseaccount.managers.DatabaseManager;
 import com.sage.exp.expenseaccount.models.Admin;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 import java.util.List;
 
+@Service
 public class AuthService {
+
+    @Autowired
     DatabaseManager manager;
 
-    @Inject
-    public AuthService(DatabaseManager manager) {
-        this.manager = manager;
+    public AuthService() {
     }
 
     public boolean authenticate(String username, String password) {

@@ -1,20 +1,26 @@
 package com.sage.exp.expenseaccount.controllers;
 
-import com.google.inject.Inject;
-import com.sage.exp.expenseaccount.managers.DatabaseManager;
 import com.sage.exp.expenseaccount.services.AuthService;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Controller;
 
 import java.io.IOException;
 
+@Controller
 public class AuthController {
 
-    @Inject
-    AuthService authService;
+    @Autowired
+    private  AuthService authService;
 
     @FXML
     private Button close;
@@ -30,6 +36,11 @@ public class AuthController {
 
     @FXML
     private TextField username;
+
+//    @Autowired
+    public AuthController() {
+//        this.authService = authService;
+    }
 
     @FXML
     protected void onLogin() throws IOException {
@@ -70,5 +81,18 @@ public class AuthController {
         alert.setHeaderText(null);
         alert.setContentText(msg);
         alert.showAndWait();
+    }
+
+    public void showLogin(Stage stage, ApplicationContext context) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/sage/exp/expenseaccount/auth-view.fxml"));
+        fxmlLoader.setControllerFactory(context::getBean);  // Ensures Spring manages the controller
+
+
+        Scene scene = new Scene(fxmlLoader.load());
+
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setScene(scene);
+        stage.show();
+
     }
 }
